@@ -35,7 +35,7 @@ Dans le terminal qui apparaît, tape la commande suivante :
 npm init
 ```
 
-Réponds aux questions posées. Cela créera un fichier package.json à la racine de ton dossier. Ce fichier contiendra la liste des bibliothèques que tu installeras.
+Réponds aux questions posées. Cela créera un fichier `package.json` à la racine de ton dossier. Ce fichier contiendra la liste des bibliothèques que tu installeras.
 
 ### 3. Installe le paquet Express.js
 Express.js est une bibliothèque qui facilite la création de serveurs web avec Node.js.
@@ -48,7 +48,7 @@ npm install express
 ```
 
 #### Crée un fichier index.js : 
-À la racine de ton dossier, crée un fichier index.js et copie-colle le code suivant depuis le site officiel : [Express Hello World](https://expressjs.com/fr/starter/hello-world.html).
+À la racine de ton dossier, crée un fichier `index.js` et copie-colle le code suivant depuis le site officiel : [Express Hello World](https://expressjs.com/fr/starter/hello-world.html).
 
 #### Lance ton programme Node.js : 
 Dans le terminal, tape :
@@ -57,13 +57,13 @@ Dans le terminal, tape :
 node index.js
 ```
 
-Si tout fonctionne, tu devrais pouvoir accéder à l'adresse http://localhost:3000.
+Si tout fonctionne, tu devrais pouvoir accéder à l'adresse `http://localhost:3000`.
 
 ### 4. Fais ta première route GET /ma-page
-En backend, une "route" est simplement une adresse web. On peut interroger une adresse web de deux façons : GET ou POST.
+En backend, une "route" est simplement une adresse web. On peut interroger une adresse web de deux façons : `GET` ou `POST`.
 
 #### Création d'une nouvelle route GET
-Le but de cet exercice est de créer une nouvelle route en GET avec l'adresse /ma-page, ce qui donnera l'URL http://localhost:3000/ma-page. Ajoute ce code dans ton fichier index.js :
+Le but de cet exercice est de créer une nouvelle route en `GET` avec l'adresse `/ma-page`, ce qui donnera l'URL `http://localhost:3000/ma-page`. Ajoute ce code dans ton fichier `index.js` :
 
 ```js
 app.get('/ma-page', (req, res) => {
@@ -80,10 +80,10 @@ node index.js
 Puis, visite http://localhost:3000/ma-page.
 
 ### 5. Aller plus loin en manipulant les fichiers
-Nous allons maintenant créer un formulaire HTML sur /ma-page et traiter les données soumises pour créer un fichier.
+Nous allons maintenant créer un formulaire HTML sur `/ma-page` et traiter les données soumises pour créer un fichier.
 
 #### Afficher un formulaire HTML
-Remplace le contenu de la route /ma-page par ceci :
+Remplace le contenu de la route `/ma-page` par ceci :
 
 ```js
 app.get('/ma-page', (req, res) => {
@@ -92,7 +92,7 @@ app.get('/ma-page', (req, res) => {
 ```
 
 #### Créer une route pour traiter le formulaire
-Ajoute cette nouvelle route à ton fichier index.js :
+Ajoute cette nouvelle route à ton fichier `index.js` :
 
 ```js
 app.get('/creer-fichier', (req, res) => {
@@ -109,7 +109,7 @@ app.get('/creer-fichier', (req, res) => {
 });
 ```
 
-Maintenant, envoie une phrase via le formulaire sur /ma-page et observe la création d'un fichier test.txt contenant le texte saisi.
+Maintenant, envoie une phrase via le formulaire sur `/ma-page` et observe la création d'un fichier test.txt contenant le texte saisi.
 
 ### Explication du code ci-dessus
 
@@ -133,11 +133,11 @@ Maintenant, envoie une phrase via le formulaire sur /ma-page et observe la créa
 Pour créer un fichier unique à chaque soumission, utilise un nom de fichier dynamique.
 Voici un guide détaillé :
 
-1. Importer fs : const fs = require('fs');
-2. Récupérer le contenu de l'input : const content = req.query.mon_input;
-3. Générer un nom de fichier unique : const fileName = \file_${Date.now()}.txt`;`
-4. Écrire dans le fichier : fs.writeFileSync(fileName, content);
-5. Envoyer une réponse : res.send(\Fichier ${fileName} créé !`);`
+1. Importer fs : `const fs = require('fs');`
+2. Récupérer le contenu de l'input : `const content = req.query.mon_input;`
+3. Générer un nom de fichier unique : `const fileName = \file_${Date.now()}.txt`;`
+4. Écrire dans le fichier : f`s.writeFileSync(fileName, content);`
+5. Envoyer une réponse : `res.send(\Fichier ${fileName} créé !`);`
 
 
 Maintenant, chaque soumission créera un nouveau fichier avec un nom unique.
